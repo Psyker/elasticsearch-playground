@@ -1,0 +1,67 @@
+settings:
+  number_of_replicas: 0
+  number_of_shards: 1
+  refresh_interval: 60s
+
+mappings:
+  dynamic: false
+  properties:
+    title:
+      type: text
+    description:
+      type: text
+      analyzer: english
+    image_url:
+      type: text
+    episodes_count:
+      type: long
+    airing:
+      type: boolean
+    score:
+      type: float
+    mal_id:
+      type: keyword
+    url:
+      type: text
+    trailer_url:
+      type: text
+    title_english:
+      type: text
+      analyzer: english
+      fields:
+        autocomplete:
+          type: text
+          analyzer: app_autocomplete
+          search_analyzer: standard
+    title_japanese:
+      type: text
+    status:
+      type: keyword
+    aired_from:
+      type: date
+    aired_to:
+      type: date
+    duration:
+      type: keyword
+    rating:
+      type: keyword
+    synonyms:
+      type: text
+    anime_type:
+      type: keyword
+    rank:
+      type: long
+    popularity:
+      type: long
+    opening_themes:
+      type: text
+    ending_themes:
+      type: text
+    broadcast:
+      type: text
+    banner_image_url:
+      type: keyword
+    poster_image_url:
+      type: keyword
+    background_image_url:
+      type: keyword
