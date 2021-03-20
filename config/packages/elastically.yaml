@@ -11,6 +11,8 @@ services:
         host: '%env(ELASTICSEARCH_HOST)%'
         port: '%env(ELASTICSEARCH_PORT)%'
         transport: '@JoliCode\Elastically\Transport\HttpClientTransport'
+        elastically_index_class_mapping:
+          anime: App\Model\Anime
         elastically_mappings_directory: '%kernel.project_dir%/config/elasticsearch'
         elastically_serializer: '@serializer'
         elastically_bulk_size: 100

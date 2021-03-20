@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\SerializedName;
 
 /**
  * Anime
@@ -88,7 +89,7 @@ class Anime
 
     /**
      * @var string|null
-     *
+     * @SerializedName("title_english")
      * @ORM\Column(name="title_english", type="string", length=255, nullable=true)
      */
     private $titleEnglish;
@@ -236,7 +237,7 @@ class Anime
         $model->episodes_count = $this->getEpisodesCount();
         $model->airing = $this->isAiring();
         $model->score = $this->getScore();
-        $model->titleEnglish = $this->getTitleEnglish();
+        $model->title_english = $this->getTitleEnglish();
 
         return $model;
     }

@@ -10,5 +10,5 @@ class Anime
     public $episodes_count;
     public $airing;
     public $score;
-    public $titleEnglish;
+    public $title_english;
 }
