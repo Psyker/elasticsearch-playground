@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,7 +44,7 @@ class Genre
     private $url;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="Anime", mappedBy="genre")
      */
@@ -57,4 +58,19 @@ class Genre
         $this->anime = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

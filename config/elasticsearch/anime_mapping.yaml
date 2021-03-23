@@ -65,3 +65,10 @@ mappings:
       type: keyword
     background_image_url:
       type: keyword
+    genres:
+      type: object
+      properties:
+        id:
+          type: keyword
+        name:
+          type: keyword

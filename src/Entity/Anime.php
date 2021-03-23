@@ -238,6 +238,15 @@ class Anime
         $model->airing = $this->isAiring();
         $model->score = $this->getScore();
         $model->title_english = $this->getTitleEnglish();
+        $model->aired_from = $this->getAiredFrom();
+        $model->aired_to = $this->getAiredTo();
+        /** @var Genre $genre */
+        foreach ($this->getGenre() as $genre) {
+            $model->genres[] = [
+                'id' => $genre->getId(),
+                'name' => $genre->getName()
+            ];
+        }
 
         return $model;
     }
