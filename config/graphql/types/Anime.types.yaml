@@ -1,0 +1,31 @@
+Anime:
+  type: object
+  config:
+    name: Anime
+    description: "An anime."
+    fields:
+      id:
+        type: ID!
+        description: "The anime's id."
+      description:
+        type: String
+        description: "The anime's description."
+      episodesCount:
+        type: Int!
+        description: "The anime's episodes count."
+      airing:
+        type: Boolean
+        description: "The anime's airing."
+      score:
+        type: Float!
+        description: "The anime's score."
+      titleEnglish:
+        type: String
+        description: "The anime's english title."
+      titleJapanese:
+        type: String
+        description: "The anime japanese title."
+      airedFrom:
+        type: DateTime
+        description: "The anime's aired start date."
+

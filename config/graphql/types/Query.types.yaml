@@ -1,0 +1,10 @@
+Query:
+  type: object
+  config:
+    name: Query
+    description: "The root schema."
+    fields:
+      animes:
+        description: "Lookup animes."
+        type: '[Anime!]!'
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\Query\\AnimeResolver", [args])'

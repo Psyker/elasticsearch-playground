@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -14,61 +15,42 @@ use Doctrine\ORM\Mapping as ORM;
 class Genre
 {
     /**
-     * @var int
-     *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private int $id;
 
     /**
-     * @var int
-     *
      * @ORM\Column(name="mal_id", type="integer", nullable=false)
      */
-    private $malId;
+    private int $malId;
 
     /**
-     * @var string
-     *
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
-    private $name;
+    private string $name;
 
     /**
-     * @var string
-     *
      * @ORM\Column(name="url", type="string", length=255, nullable=false)
      */
-    private $url;
+    private string $url;
 
     /**
-     * @var Collection
-     *
      * @ORM\ManyToMany(targetEntity="Anime", mappedBy="genre")
      */
-    private $anime;
+    private Collection $anime;
 
-    /**
-     * Constructor
-     */
     public function __construct()
     {
-        $this->anime = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->anime = new ArrayCollection();
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
